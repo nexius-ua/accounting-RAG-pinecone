@@ -1,0 +1,30 @@
+# Secrets
+.env
+scripts/.env
+.mcp.json
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Staging and logs (not needed in repo)
+chunks/
+scripts/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+venv/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

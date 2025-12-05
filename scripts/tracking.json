@@ -1,0 +1,26 @@
+{
+  "index": "legal-docs-ua",
+  "namespace": "default",
+  "last_updated": "2025-12-02T16:45:54.812147",
+  "files": {
+    "Gem 19 Логи доступу до Google Drive.md": {
+      "content_hash": "5dd5361af69b2a582ae1d7b9f583bdc1",
+      "chunk_ids": [
+        "24441f27883d3d5e",
+        "c44c623406301a4a",
+        "a73db225c051d44c",
+        "4fa92ca0087730d9",
+        "b30ac932f99abbfe",
+        "24916b553a59ca2f",
+        "1e99510a5bd0ff36",
+        "1bbd68d83f376d74",
+        "ba76570af102d775",
+        "8b51668871880a72",
+        "7b43052a1f2b1248"
+      ],
+      "chunks_count": 11,
+      "uploaded_at": "2025-12-02T16:45:54.812125",
+      "source": "archived_source_docs"
+    }
+  }
+}
