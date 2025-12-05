@@ -20,7 +20,7 @@
 ```json
 {
   "mcpServers": {
-    "pinecone-legal": {
+    "pinecone-accounting": {
       "command": "npx",
       "args": ["-y", "@pinecone-database/mcp"],
       "env": {
@@ -52,7 +52,7 @@ claude mcp reset-project-choices
 
 ```json
 {
-  "enabledMcpjsonServers": ["pinecone-legal"]
+  "enabledMcpjsonServers": ["pinecone-accounting"]
 }
 ```
 
@@ -76,7 +76,7 @@ claude mcp reset-project-choices
 claude mcp list
 
 # Очікуваний результат:
-# pinecone-legal: npx -y @pinecone-database/mcp - ✓ Connected
+# pinecone-accounting: npx -y @pinecone-database/mcp - ✓ Connected
 ```
 
 Або в Claude Code:
@@ -93,7 +93,7 @@ claude mcp list
 ### Приклад пошуку в індексі:
 
 ```
-Знайди в Pinecone документи про "комерційна таємниця NDA"
+Знайди в Pinecone документи про "облікова політика амортизація"
 ```
 
 Claude використає `search-records` для пошуку у вашому індексі.

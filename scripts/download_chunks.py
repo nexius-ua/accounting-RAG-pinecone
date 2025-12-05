@@ -18,7 +18,7 @@ if sys.platform == "win32":
 load_dotenv(Path(__file__).parent / ".env")
 
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-PINECONE_INDEX = os.getenv("PINECONE_INDEX", "legal-docs-ua")
+PINECONE_INDEX = os.getenv("PINECONE_INDEX", "accounting-policy")
 CHUNKS_DIR = Path(__file__).parent.parent / "archived_chunks"
 NAMESPACE = "default"
 

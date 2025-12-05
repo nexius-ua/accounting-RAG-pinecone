@@ -6,32 +6,33 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Legal RAG system** for Ukrainian intellectual property law using Pinecone vector database for semantic search across legal research documents.
+**Accounting RAG system** for Ukrainian accounting policies using Pinecone vector database for semantic search across accounting research documents.
 
 ### Domain Focus
 
-- **NDA** (Non-Disclosure Agreement) - Угода про нерозголошення
-- **NCA** (Non-Compete Agreement) - Угода про неконкуренцію
-- **NSA** (Non-Solicitation Agreement) - Угода про непереманювання
-- **ОІВ** (Об'єкти Інтелектуальної Власності) - Intellectual Property Objects
-- **Комерційна таємниця** - Trade secrets protection
-- **ФОП contracts** - Agreements with individual entrepreneurs
+- **Облікова політика** - Accounting policy documents
+- **Бухгалтерський облік** - Accounting standards and practices
+- **Податковий облік** - Tax accounting
+- **Фінансова звітність** - Financial reporting
+- **МСФЗ/МСБО** - IFRS/IAS standards
+- **П(С)БО** - Ukrainian accounting standards
 
 ---
 
 ## Repository Structure
 
 ```
-legal-RAG-pinecone/
-├── source_docs/              # Ukrainian legal research documents (.md)
-│   ├── Gem 1-17...          # Research gems on specific legal topics
-│   ├── Закон про авторське право...  # Relevant legislation
-│   └── 13 Expert article... # Professional analyses
+accounting-RAG-pinecone/
+├── source_docs/              # Ukrainian accounting documents (.md)
+│   └── [accounting policy documents]
+├── archived_source_docs/     # Processed source documents
+├── archived_chunks/          # Uploaded chunks backup
 ├── research/                 # Setup guides and documentation
 │   └── Pinecone-Database-Setup-Guide.md
 ├── scripts/                  # Python scripts for data processing
 │   ├── .env                  # Environment variables (API keys)
 │   ├── chunk_and_upload.py  # Chunking and Pinecone upload script
+│   ├── download_chunks.py   # Download chunks from Pinecone
 │   └── test_chunk_and_upload.py  # Tests for chunking
 └── CLAUDE.md                 # This file
 ```
@@ -43,9 +44,8 @@ legal-RAG-pinecone/
 Environment variables in `scripts/.env`:
 
 ```bash
-HOST=https://legal-docs-ua-xxx.svc.pinecone.io  # Pinecone host
 PINECONE_API_KEY=pcsk_...                        # Pinecone API key
-PINECONE_INDEX=legal-docs-ua                     # Index name
+PINECONE_INDEX=accounting-policy                 # Index name
 ```
 
 ---
@@ -1007,7 +1007,7 @@ class PineconeClient:
         if not self.api_key:
             raise ValueError("PINECONE_API_KEY required")
         self.pc = Pinecone(api_key=self.api_key)
-        self.index_name = os.getenv("PINECONE_INDEX", "default-index")
+        self.index_name = os.getenv("PINECONE_INDEX", "accounting-policy")
 
     def get_index(self):
         return self.pc.Index(self.index_name)
